@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+				
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>3D Kalkulator</title>
+</head>
+<body>
+	<section class = "banner"> 
+		<h1>3D KALKULATOR</h1>
+	</section>
+	
+		<div class="waktu">	
+		<script>
+
+			var nama;
+			var ucapan;
+			var hariini= new Date();
+			var jam= hariini.getHours();
+			nama=prompt("Masukkan Nama Anda");
+			if (jam < 12)
+				ucapan="Pagi";
+			if (jam >= 12)
+				jam=jam - 12;
+			if(jam < 6)
+				ucapan ="Siang";
+			if(jam >=6 )
+				ucapan="Malam";
+			document.writeln("Selamat "+ucapan+" "+nama);
+			
+		</script>
+		
+		
+		</div>
+	
+		<div class="atas">	
+			<p>Menghitung volume dan luas permukaan dari silinder, kerucut, dan bola.</p>
+		</div>
+		<section>
+			<div class="silinder">
+				<h2>Silinder</h2>
+			</div>
+					<div class="fotoSilinder">
+      <img src="foto/silinder.png" style="display: block; height: 170px; margin-left: 50px;">
+    </div>
+				<div class="jari">
+
+				Masukkan jari-jari silinder (dalam meter)<input type="text" id="jariS" placeholder="Jari-Jari">
+			</div>
+			<div class="tinggi">
+				Masukkan tinggi silinder (dalam meter) <input type="text" id="tinggiS" placeholder="Tinggi">
+			</div>
+			<div class="hitung">
+					<button type ="submit"onclick="hasilSilinder()">Hitung!</button>
+				</div>
+			<div class="hitung">
+				<h2>Hasil Perhitungan</h2>
+			</div>
+			<div class="lp">
+				<p>Luas Permukaan :<span id="lps"></span>m<sup>2</sup></p><br>
+			</div>
+			<div class="vl">
+				<p>Volume : <span id="vls"></span>m<sup>3</sup> </p>
+
+			</div>
+		</section>
+		<section>
+			<div class="kerucut">
+				<h2>Kerucut</h2>
+			</div>
+			</div>
+					<div class="fotokerucut">
+      <img src="foto/kerucut.jpg" style="display: block; height: 170px; margin-left: 50px;">
+    </div>
+			
+				<div class="jri">
+				Masukkan jari-jari kerucut (dalam meter)<input type="text"  id="jariK" placeholder="Jari-Jari">
+			</div>
+			<div class="gp">
+				Masukkan garis pelukis kerucut (dalam meter) <input type="text" id="garisK" placeholder="Garis Pelukis">
+			</div>
+			<div class="tgi">
+				Masukkan tinggi kerucut ( dalam meter) <input type="text" id="tinggiK" placeholder="Tinggi">
+			</div>
+			<div class="hitungk">
+					<button type="submit"onclick="hasilKerucut()">Hitung!</button>
+				</div>
+			<div class="hitungk">
+				<h2>Hasil Perhitungan</h2>
+			</div>
+			<div class="lpk">
+				<p>Luas Permukaan :<span id="lupk"></span>m<sup>2</sup></p><br>
+			</div>
+			<div class="vlk">
+				<p>Volume : <span id="volk"></span>m<sup>3</sup></p><br>
+			</div>
+			</section>
+			<section>
+			<div class="bola">
+				<h2>Bola</h2>
+			</div>
+			</div>
+					<div class="fotobola">
+      <img src="foto/bola.jpg" style="display: block; height: 170px; margin-left: 50px;">
+    </div>
+			
+				<div class="jaribola">
+				Masukkan jari-jari bola (dalam meter)<input type="text"  id="jariB" placeholder="Jari-Jari">
+			</div>
+			<div class="hitungbola">
+					<button type="submit"onclick="hasilBola()">Hitung!</button>
+				</div>
+			<div class="hitungbola">
+				<h2>Hasil Perhitungan</h2>
+			</div>
+			<div class="lpb">
+				<p>Luas Permukaan :<span id="lupb"></span>m<sup>2</sup></p><br>
+			</div>
+			<div class="vlb">
+				<p>Volume :<span id="volb"></span>m<sup>3</sup></p><br>
+			</div>
+		
+	</section>
+
+</body>
+<script>
+	function hasilSilinder() {
+	var tinggisilinder = (document.getElementById("tinggiS").value);
+	var jarisilinder = (document.getElementById("jariS").value);
+	tinggisilinder = tinggisilinder.replace(",", ".");
+	var tinggisilinder1 = tinggisilinder.replace(".", "");
+	console.log(tinggisilinder);
+	jarisilinder = jarisilinder.replace(",", ".");
+	var jarisilinder1 = jarisilinder.replace(".", "");
+	console.log(jarisilinder);
+	var reg = new RegExp('^\\d+$');
+	if(tinggisilinder == "" || jarisilinder == "") {
+		alert("Mohon masukkan input silinder terlebih dahulu");
+		return;
+	}
+	if(!reg.test(tinggisilinder1) || !reg.test(jarisilinder1)) {
+		alert("Masukkan input Silider hanya boleh berupa angka");
+		document.getElementById("tinggiS").value = "";
+		document.getElementById("jariS").value = "";
+		document.getElementById("lps").innerHTML = "";
+		document.getElementById("vls").innerHTML = "";
+		return;
+	}
+	var jari = document.getElementById("jariS").value;
+ 	var tinggi = document.getElementById("tinggiS").value;
+
+	var hasil = 2 * Math.PI * (jari * jari) + 2 * Math.PI * jari * tinggi;
+ 	document.getElementById("lps").innerHTML = hasil.toFixed(2);
+
+
+	var jari = document.getElementById("jariS").value;
+ 	var tinggi = document.getElementById("tinggiS").value;
+
+	var hasil = Math.PI * (jari * jari) * tinggi;
+    document.getElementById("vls").innerHTML = hasil.toFixed(2);
+
+}
+
+function hasilKerucut() {
+	var tinggikerucut = (document.getElementById("tinggiK").value);
+	var jarikerucut = (document.getElementById("jariK").value);
+	var garispelukis = (document.getElementById("garisK").value);
+	var tinggikerucut1 = tinggikerucut.replace(",",".");
+	tinggikerucut1 = tinggikerucut1.replace(".", "");
+	var jarikerucut1 = jarikerucut.replace(",",".");
+	jarikerucut1 = jarikerucut1.replace(".","");
+	var garispelukis1 = garispelukis.replace(",",".");
+	garispelukis1 = garispelukis1.replace(".","");
+	var reg = new RegExp('^\\d+$');
+
+	if(tinggikerucut == "" || jarikerucut == "" || garispelukis == "") {
+		alert("Mohon masukkan input kerucut terlebih dahulu");
+		return;
+	}
+
+	if(!reg.test(tinggikerucut1) || !reg.test(jarikerucut1) || !reg.test(garispelukis1)) {
+		alert("Masukkan input Kerucut hanya boleh berupa angka");
+		document.getElementById("tinggiK").value = "";
+		document.getElementById("garisK").value = "";
+		document.getElementById("jariK").value = "";
+		document.getElementById("lupk").innerHTML = "";
+		document.getElementById("volk").innerHTML = "";
+		return;
+	}
+	
+
+			var jari = document.getElementById('jariK').value;
+            var tinggi = document.getElementById('tinggiK').value;
+            var garis = document.getElementById('garisK').value;
+
+            var hasil = Math.PI * (jari*jari) + Math.PI * jari * garis;
+            document.getElementById('lupk').innerHTML = hasil.toFixed(2);
+
+
+             var jari = document.getElementById('jariK').value;
+            var tinggi = document.getElementById('tinggiK').value;
+
+            var hasil = (1/3) * Math.PI * (jari*jari) * tinggi;
+            document.getElementById('volk').innerHTML = hasil.toFixed(2);
+        }
+
+
+
+
+
+function hasilBola() {
+	var jaribola = (document.getElementById("jariB").value);
+	jaribola = jaribola.replace(",",".");
+	var jaribola1 = jaribola.replace(".","");
+	if(jaribola == "") {
+		alert("Masukkan input jari-jari bola terlebih dahulu");
+		return;
+	}
+	var reg = new RegExp('^\\d+$');
+	if(!reg.test(jaribola1)) {
+		alert("Masukkan input Bola hanya boleh berupa angka");
+		document.getElementById("jariB").value = "";
+		document.getElementById("lupb").innerHTML = "";
+		document.getElementById("volb").innerHTML = "";
+		return;
+	}
+	var jari = document.getElementById('jariB').value;
+
+            var hasil = 4 * Math.PI * jari * jari;
+            document.getElementById('lupb').innerHTML = hasil.toFixed(2)
+
+            var jari = document.getElementById('jariB').value;
+
+            var hasil = 4/3 * Math.PI * jari * jari * jari;
+            document.getElementById('volb').innerHTML = hasil.toFixed(2);
+}
+</script>
+<marquee behavior="alternate" scrollamount="5"> <font name="Forte"><u><h2>
+GOOD LUCK!!</h2>
+</u></font> <marquee>
+</html>

@@ -1,0 +1,164 @@
+*{
+	padding:0;
+	margin:0;
+	font-family: sans-serif;
+}
+
+.waktu{
+
+	background-color: #858686;
+	color: #fff;
+	padding: 13px 0;
+	text-align: center;	
+}
+.banner{
+	height: 20vh;
+	background-color:#DDDBDB;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.banner h1{
+	padding:20px 10px;
+	background-color: #E37151;
+	text-align: center;
+	color: #fff;
+	margin-bottom: 25px;
+	margin-left: 220px;
+	margin-right:220px;
+	font-style: unset;
+
+
+}
+section{
+	padding: 3px 0;
+}
+.atas{
+	margin-left: 40px;
+	margin-top: 50px;
+}
+.silinder{
+	margin-left: 40px;
+	margin-top: 20px;
+}
+.jari{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.tinggi{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+button[type=submit]{
+	font-size: 15px;
+	width: 60px;
+	margin-top: 10px;
+	margin-left: 400px;
+	margin-bottom: 0px;
+	background-color:#51C0E3;
+	border-color: #51C0E3;
+
+}
+input[type=text]{
+	border:1px solid;
+	padding: 0px;
+	width: 32%;
+	height: 20px;
+	font-size: 15px;
+	font-family: inherit;
+	margin-bottom: 0px;
+	margin-right:  30px;
+}
+.hitung h2{
+	margin-left: 40px;
+}
+.lp{
+	margin-left: 40px;
+	margin-top: 25px;
+}
+.vl{
+	margin-left: 40px;
+	margin-top: 10px;
+	
+}
+.kerucut {
+	margin-top: 120px;
+	margin-left: 40px;
+}
+.jri{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.gp{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.tgi{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.hitungk h2{
+	margin-left: 40px; 
+}
+.lpk {
+	margin-left: 40px;
+	margin-top: 25px;
+}
+.vlk {
+	margin-left: 40px;
+	margin-top: 25px;
+}
+button[type=submit]{
+	font-size: 15px;
+	width: 60px;
+	margin-top: 10px;
+	margin-left: 490px;
+	margin-bottom: 0px;
+	background-color:#51C0E3;
+	border-color: #51C0E3;
+
+}
+input[type=text]{
+	border:1px solid;
+	padding: 0px;
+	width: 32%;
+	height: 20px;
+	font-size: 15px;
+	font-family: inherit;
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+.bola{
+	margin-top: 90px;
+	margin-left: 40px;
+}
+.jaribola{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+.hitungbola h2{
+	margin-top: 30px;
+	margin-left: 40px;
+}
+.lpb{
+	margin-top: 25px;
+	margin-left: 40px
+}
+.vlb{
+	margin-top: 25px;
+	margin-left: 40px
+}
+button[type=submit]{
+	font-size: 15px;
+	width: 60px;
+	margin-top: 10px;
+	margin-left: 490px;
+	margin-bottom: 0px;
+	background-color:#51C0E3;
+	border-color: #51C0E3;
+
+}

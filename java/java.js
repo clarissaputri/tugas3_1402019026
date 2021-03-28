@@ -1,0 +1,11 @@
+var nama = window.prompt("Masukkan Nama Anda");
+datetoday = new Date();
+timenow = datetoday.getTime();
+datetoday=setTime(timenow);
+thehour = datetoday.getHours();
+if(thehour > 19) display ="Malam";
+else if(the hour > 12) display="Siang";
+else display ="Pagi";
+var greeting ="Selamat"+" "+display+" "+nama;
+document.getElementById("nama").style.display ="block";
+document.getElementById("nama").innerHTML=greeting;
